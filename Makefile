@@ -32,12 +32,12 @@ UTL_SRC := $(wildcard $(UTL_DIR)/*.cpp)
 UTL_BIN := $(patsubst $(UTL_DIR)/%.cpp,$(BIN)/%,$(UTL_SRC))
 
 # Default
-min: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui ana pylibs libkpix.so
+min: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui libkpix.so
 # working point: kpix onlineGui can only work with old qwt libs which were already replaced by and updated in the current database.
 # can be fixed by mannually debugging everywhere... (todo: mengqing @Nov27)
-all: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) gui ana online pylibs libkpix.so
-norm: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) gui ana online pylibs
-share: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) ana pylibs libkpix.so
+all: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs libkpix.so
+norm: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs
+share: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) libkpix.so
 
 # Object directory
 dir:
@@ -48,7 +48,7 @@ clean:
 	rm -rf $(OBJ)
 	rm -f $(BIN)/*
 	cd cntrlGui; qmake; make clean
-	cd root; make clean
+	#cd root; make clean
 	cd python; make clean
 #ifneq ($(QWTDIR),)
 	cd onlineGui; qmake; make clean
@@ -76,10 +76,10 @@ libkpix.so: $(GEN_OBJ) $(KPX_OBJ)
 	$(CC) -shared -fPIC $(CFLAGS) $(DEF) $(OBJ)/* -o $@  $(LFLAGS) 
 
 # root
-ana:
-#ifneq ($(ROOTSYS),)
-	cd root; make
-#endif
+# ana:
+# #ifneq ($(ROOTSYS),)
+# 	cd root; make
+# #endif
 
 # python libs
 pylibs:

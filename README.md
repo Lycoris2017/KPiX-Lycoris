@@ -40,7 +40,7 @@ make -j 4
 
 Make options:
 * norm: no shared library libkpix.so produced
-* share: only shared library libkpix.so produced (added to default option)
+* share: only shared library libkpix.so produced (added to default option); Noted: pylibs is not included in this shared lib.
 
 #### Branch descriptions:
 
