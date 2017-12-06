@@ -45,8 +45,10 @@ dir:
 
 # Clean
 clean:
-	rm -rf $(OBJ)
-	rm -f $(BIN)/*
+	#rm -rf $(OBJ)
+	rm -r ./.obj 
+	#rm -f $(BIN)/*
+	rm -r ./bin
 	cd cntrlGui; qmake; make clean
 	#cd root; make clean
 	cd python; make clean
