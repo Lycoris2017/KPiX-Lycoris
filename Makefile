@@ -35,9 +35,14 @@ UTL_BIN := $(patsubst $(UTL_DIR)/%.cpp,$(BIN)/%,$(UTL_SRC))
 min: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui libkpix.so
 # working point: kpix onlineGui can only work with old qwt libs which were already replaced by and updated in the current database.
 # can be fixed by mannually debugging everywhere... (todo: mengqing @Nov27)
-all: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs libkpix.so
-norm: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs
-share: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) libkpix.so
+all: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs libkpix.so
+norm: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs
+share: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) libkpix.so
+install:
+	test -d /usr/local/lib/kpix || mkdir /usr/local/lib/kpix
+	cp libkpix.so /usr/local/lib/kpix/
+	test -d /usr/local/include/kpix || mkdir /usr/local/include/kpix
+	cp $(GEN_HDR) $(KPX_HDR) /usr/local/include/kpix/
 
 # Object directory
 dir:
@@ -45,12 +50,12 @@ dir:
 
 # Clean
 clean:
-	#rm -rf $(OBJ)
+#	rm -rf $(OBJ)
 	rm -r ./.obj 
-	#rm -f $(BIN)/*
-	rm -r ./bin
+#	rm -f $(BIN)/*
+	rm  ./bin/*
 	cd cntrlGui; qmake; make clean
-	#cd root; make clean
+#	cd root; make clean
 	cd python; make clean
 #ifneq ($(QWTDIR),)
 	cd onlineGui; qmake; make clean
