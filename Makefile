@@ -42,7 +42,7 @@ install:
 	test -d /usr/local/lib/kpix || mkdir /usr/local/lib/kpix
 	cp libkpix.so /usr/local/lib/kpix/
 	test -d /usr/local/include/kpix || mkdir /usr/local/include/kpix
-	cp $(GEN_DIR)/*.h $(KPX_DIR)/*.h /usr/local/include/kpix/
+	cp $./generic/*.h ./kpix/*.h /usr/local/include/kpix/
 
 # Object directory
 dir:
