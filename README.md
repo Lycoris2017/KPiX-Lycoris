@@ -3,7 +3,7 @@
 Desciption: DAQ software to read KPiX chip integrated to sensors of LYCORIS telescope. Original code in Copyright (c) 2011 by SLAC, All rights reserved.
 
 
-# Short recipe for KPiX DAQ setup:
+## Short recipe for KPiX DAQ setup:
 --------------
 
 ### Basic setup is:
@@ -36,11 +36,13 @@ Collaboration ATTENTION! Please always push to your own branch, then to ask for 
 tcsh
 source setup_env_template.csh
 make -j 4
+sudo make install # do this if you need shared lib and headers for other compilable codes.
 ```
 
 Make options:
 * norm: no shared library libkpix.so produced
 * share: only shared library libkpix.so produced (added to default option); Noted: pylibs is not included in this shared lib.
+* install: cp libkpix.so to /usr/local/lib/kpix; cp generic/*.h kpix/*.h to /usr/local/include/kpix.
 
 #### Branch descriptions:
 
