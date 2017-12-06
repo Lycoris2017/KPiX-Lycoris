@@ -2,3 +2,9 @@
 *~
 *.save*
 *svn*
+*.so
+*.o
+bin/
+trash/
+onlineGui/Makefile
+cntrlGui/Makefile

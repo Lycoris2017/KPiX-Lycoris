@@ -15,10 +15,10 @@ GEN_HDR := $(wildcard $(GEN_DIR)/*.h)
 GEN_OBJ := $(patsubst $(GEN_DIR)/%.cpp,$(OBJ)/%.o,$(GEN_SRC))
 
 # Device Lib Sources
-DEV_DIR := $(PWD)/deviceLib
-DEV_SRC := $(wildcard $(DEV_DIR)/*.cpp)
-DEV_HDR := $(wildcard $(DEV_DIR)/*.h)
-DEV_OBJ := $(patsubst $(DEV_DIR)/%.cpp,$(OBJ)/%.o,$(DEV_SRC))
+#DEV_DIR := $(PWD)/deviceLib
+#DEV_SRC := $(wildcard $(DEV_DIR)/*.cpp)
+#DEV_HDR := $(wildcard $(DEV_DIR)/*.h)
+#DEV_OBJ := $(patsubst $(DEV_DIR)/%.cpp,$(OBJ)/%.o,$(DEV_SRC))
 
 # Kpix Sources
 KPX_DIR := $(PWD)/kpix
@@ -32,7 +32,7 @@ UTL_SRC := $(wildcard $(UTL_DIR)/*.cpp)
 UTL_BIN := $(patsubst $(UTL_DIR)/%.cpp,$(BIN)/%,$(UTL_SRC))
 
 # Default
-min: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) gui ana pylibs libkpix.so
+min: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui ana pylibs libkpix.so
 # working point: kpix onlineGui can only work with old qwt libs which were already replaced by and updated in the current database.
 # can be fixed by mannually debugging everywhere... (todo: mengqing @Nov27)
 all: dir $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ) $(UTL_BIN) gui ana online pylibs libkpix.so
@@ -59,19 +59,20 @@ $(OBJ)/%.o: $(GEN_DIR)/%.cpp $(GEN_DIR)/%.h
 	$(CC) -c $(CFLAGS) $(DEF) -o $@ $<
 
 # Compile Generic Sources
-$(OBJ)/%.o: $(DEV_DIR)/%.cpp $(DEV_DIR)/%.h
-	$(CC) -c $(CFLAGS) $(DEF) -o $@ $<
+#$(OBJ)/%.o: $(DEV_DIR)/%.cpp $(DEV_DIR)/%.h
+#	$(CC) -c $(CFLAGS) $(DEF) -o $@ $<
 
 # Compile Tracker Sources
 $(OBJ)/%.o: $(KPX_DIR)/%.cpp $(KPX_DIR)/%.h
 	$(CC) -c $(CFLAGS) $(DEF) -o $@ $<
 
 # Comile utilities
-$(BIN)/%: $(UTL_DIR)/%.cpp $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ)
+#$(BIN)/%: $(UTL_DIR)/%.cpp $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ)
+$(BIN)/%: $(UTL_DIR)/%.cpp $(GEN_OBJ) $(KPX_OBJ)
 	$(CC) $(CFLAGS) $(DEF) $(OBJ)/* -o $@ $< $(LFLAGS) 
 
 # Compile all c-level code to a shared lib for EUDAQ: wmq@15-Jun-2017
-libkpix.so: $(GEN_OBJ) $(DEV_OBJ) $(KPX_OBJ)
+libkpix.so: $(GEN_OBJ) $(KPX_OBJ)
 	$(CC) -shared -fPIC $(CFLAGS) $(DEF) $(OBJ)/* -o $@  $(LFLAGS) 
 
 # root
