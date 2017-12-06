@@ -3,7 +3,7 @@
 Desciption: DAQ software to read KPiX chip integrated to sensors of LYCORIS telescope. Original code in Copyright (c) 2011 by SLAC, All rights reserved.
 
 
-## Short recipe for KPiX DAQ setup:
+# Short recipe for KPiX DAQ setup:
 --------------
 
 ### Basic setup is:
