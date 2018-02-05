@@ -349,7 +349,7 @@ void UdpLink::open ( int32_t port, uint32_t count, ... ) {
    const char *        host;
    uint32_t            rwin;
    socklen_t           rwin_size=4;
-   bool udp_enDataThread=true; // wmq
+   //bool udp_enDataThread=true; // wmq
    
    if ( udpFd_ != NULL ) return;
 
@@ -414,8 +414,8 @@ void UdpLink::open ( int32_t port, uint32_t count, ... ) {
 #endif
 
    // Start threads
-   //CommLink::open();
-   CommLink::open(udp_enDataThread); // wmq
+   CommLink::open();
+   //CommLink::open(udp_enDataThread); // wmq
 }
 
 // Stop threads and close link

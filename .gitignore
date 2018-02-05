@@ -8,3 +8,6 @@ bin/
 trash/
 onlineGui/Makefile
 cntrlGui/Makefile
+moc_*
+*.log
+*.tar
