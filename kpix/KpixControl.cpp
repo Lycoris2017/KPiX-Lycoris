@@ -41,12 +41,13 @@ KpixControl::KpixControl ( CommLink *commLink, string defFile, uint kpixCount ) 
 
    // Set run states
    vector<string> states;
-   states.resize(4);
+   states.resize(5);
    //states.resize(5); //wmq
    states[0] = "Stopped";
    states[1] = "Running";
    states[2] = "Running Calibration";
    states[3] = "Evr Running";
+   states[4] = "NimA Running";
    //states[4] = "MiaMia evr"; // wmq
    getVariable("RunState")->setEnums(states);
 
@@ -530,6 +531,21 @@ void KpixControl::setRunState ( string state ) {
       device("cntrlFpga",0)->set("AcquisitionTrigger","Event Receiver");
       writeConfig(false);
    }
+
+   else if ( !hwRunning_ && state == "NimA Running" ) {
+
+      // Increment run number
+      runNumber = getVariable("RunNumber")->getInt() + 1;
+      getVariable("RunNumber")->setInt(runNumber);
+      addRunStart();
+
+      swRunRetState_ = "Stopped";
+      hwRunning_   = true;
+      getVariable("RunState")->set(state);
+
+      device("cntrlFpga",0)->set("AcquisitionTrigger","Event Receiver");
+      writeConfig(false);
+   }   
 }
 
 //! Method to return state string
