@@ -309,7 +309,7 @@ void CommLink::dataHandler() {
    }
 }
 
-Data* CommLink::pollEudaqQueue(){
+Data* CommLink::Eudaq_DataRun(){
   std::unique_lock<std::mutex> eulock(eudaqQueue_guard);
   if (eudaqQueue_.empty()) {
     eulock.unlock();

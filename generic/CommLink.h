@@ -201,7 +201,7 @@ class CommLink {
 
       //! Eudaq related 
       void enableEudaq(){eudaqPush_ = true;};
-      Data* pollEudaqQueue();
+      Data* Eudaq_DataRun();
       //! Open link and start threads
       /*! 
        * Return true on success.
