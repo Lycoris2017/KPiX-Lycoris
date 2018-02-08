@@ -3,10 +3,11 @@ CC     := g++ -g -std=c++11
 DEF    := -DMAKE_SW_VERSION=\"kpixSw_3.10\"
 BIN    := $(PWD)/bin
 OBJ    := $(PWD)/.obj
-#XMLC   := /afs/slac/g/reseng/libraries/libxml2/bin/xml2-config
 XMLC   := xml2-config
 CFLAGS := -Wall `$(XMLC) --cflags` -I$(PWD)/generic -I$(PWD)/kpix -I$(PWD)/offline -I$(PWD)/deviceLib -fPIC
 LFLAGS := `$(XMLC) --libs` -pthread -lrt -lbz2
+SYSLIB := /usr/local/lib/kpix
+SYSINC := /usr/local/include/kpix
 
 # Generic Sources
 GEN_DIR := $(PWD)/generic
@@ -39,10 +40,10 @@ all: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs libkpix.so
 norm: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs
 share: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) libkpix.so
 install:
-	test -d /usr/local/lib/kpix || mkdir /usr/local/lib/kpix
-	cp libkpix.so /usr/local/lib/kpix/
-	test -d /usr/local/include/kpix || mkdir /usr/local/include/kpix
-	cp ./generic/*.h ./kpix/*.h /usr/local/include/kpix/
+	test -d $(SYSLIB) || mkdir $(SYSLIB)
+	cp libkpix.so $(SYSLIB)
+	test -d $(SYSINC) || mkdir $(SYSINC) 
+	cp ./generic/*.h ./kpix/*.h $(SYSINC)
 
 # Object directory
 dir:
