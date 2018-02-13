@@ -8,15 +8,15 @@
       <CalDacStep>5</CalDacStep>
       <CalMeanCount>400</CalMeanCount>
       <DataAuto>True</DataAuto>
-      <DataBase>/home/mengqing/data</DataBase>
-      <DataFile>/home/mengqing/data/data_sync.bin</DataFile>
+      <DataBase>/home/lycoris-admin/data</DataBase>
+      <DataFile>/home/lycoris-admin/data/data_sync.bin</DataFile>
       <DebugCmdTime>True</DebugCmdTime>
       <DebugEnable>False</DebugEnable>
       <RunCount>10000</RunCount>
       <RunRate>No Limit</RunRate>
       <cntrlFpga>
         <!--<AcquisitionTrigger>NimA</AcquisitionTrigger>-->
-	<AcquisitionTrigger>NimA</AcquisitionTrigger>
+	<AcquisitionTrigger>Software</AcquisitionTrigger>
          <BncSourceA>RegClock</BncSourceA>
          <BncSourceB>RegClock</BncSourceB>
          <ClkPeriodAcq>320nS</ClkPeriodAcq>
@@ -276,7 +276,7 @@
             <SerialNumber>1018</SerialNumber>
          </kpixAsic>
          <kpixAsic index="26">
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
             <DacThresholdA>235</DacThresholdA>
              
             <Chan_0000_0031>AAAAAAAA ADAAADDD AAAAADAA AAAAAAAA</Chan_0000_0031>

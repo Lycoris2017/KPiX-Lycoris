@@ -8,8 +8,8 @@
       <CalDacStep>5</CalDacStep>
       <CalMeanCount>400</CalMeanCount>
       <DataAuto>True</DataAuto>
-      <DataBase>/home/mengqing/data</DataBase>
-      <DataFile>/home/mengqing/data/test.bin</DataFile>
+      <DataBase>/scratch/data/</DataBase>
+      <DataFile>/scratch/data/test.bin</DataFile>
       <DebugCmdTime>True</DebugCmdTime>
       <DebugEnable>False</DebugEnable>
       <RunCount>500</RunCount>
@@ -28,7 +28,7 @@
          <KpixInputEdge>Falling Edge</KpixInputEdge>
          <KpixOutputEdge>Rising Edge</KpixOutputEdge>
          <TrigSource>None</TrigSource>
-         <TimestampSource>CmosA</TimestampSource>
+         <TimestampSource>None</TimestampSource>
          <kpixAsic>
             <BunchClockCount>8191</BunchClockCount>
             <Cal0Delay>750</Cal0Delay>
@@ -269,7 +269,7 @@
             <SerialNumber>1020</SerialNumber>
          </kpixAsic>
          <kpixAsic index="28">
-            <Enabled>False</Enabled>
+            <Enabled>True</Enabled>
             <!-- <DacThresholdA>240</DacThresholdA> -->
             <!--
 	    <Chan_0000_0031>AAAAAAAA AAAAAAAA AAAAAAAA AAAAAAAA</Chan_0000_0031>

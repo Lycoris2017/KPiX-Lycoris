@@ -9,8 +9,8 @@
       <CalMeanCount>400</CalMeanCount>
       <DataAuto>True</DataAuto>
       <!--<DataBase>/home/lycoris-dev/mengqing/eudaq/DaqData/kpixBin/</DataBase>-->
-      <DataBase>/home/mengqing/data/</DataBase>
-      <DataFile>/home/mengqing/data/dummy_xml.bin</DataFile> 
+      <DataBase>/home/lycoris-admin/data/</DataBase>
+      <DataFile>/home/lycoris-admin/data/dummy_xml.bin</DataFile> 
       <!-- <DataFile>./data/fifoTest/dummy_xml.bin</DataFile> -->
       <DebugCmdTime>True</DebugCmdTime>
       <DebugEnable>False</DebugEnable>

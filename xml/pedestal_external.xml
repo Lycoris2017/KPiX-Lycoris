@@ -8,11 +8,11 @@
       <CalDacStep>5</CalDacStep>
       <CalMeanCount>400</CalMeanCount>
       <DataAuto>True</DataAuto>
-      <DataBase>/home/mengqing/data</DataBase>
-      <DataFile>/home/mengqing/data/pedestral_ext.bin</DataFile>
+      <DataBase>/scratch/data</DataBase>
+      <DataFile>/scratch/data/pedestral_ext.bin</DataFile>
       <DebugCmdTime>True</DebugCmdTime>
       <DebugEnable>False</DebugEnable>
-      <RunCount>10000</RunCount>
+      <RunCount>100</RunCount>
       <RunRate>No Limit</RunRate>
       <cntrlFpga>
         <!--<AcquisitionTrigger>NimA</AcquisitionTrigger>-->
@@ -276,7 +276,7 @@
             <SerialNumber>1018</SerialNumber>
          </kpixAsic>
          <kpixAsic index="26">
-            <Enabled>True</Enabled>
+            <Enabled>False</Enabled>
             <DacThresholdA>255</DacThresholdA> 
     
 	    <Chan_0000_0031>AAAAAAAA AAAAAAAA AAAAAAAA AAAAAAAA</Chan_0000_0031>
