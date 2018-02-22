@@ -8,8 +8,8 @@
       <CalDacStep>5</CalDacStep>
       <CalMeanCount>400</CalMeanCount>
       <DataAuto>True</DataAuto>
-      <DataBase>/scratch/data</DataBase>
-      <DataFile>/scratch/data/pedestral_ext.bin</DataFile>
+      <DataBase>/home/lycoris-dev/data/daq_kpix_ecal</DataBase>
+      <DataFile>/home/lycoris-dev/data/daq_kpix_ecal/pedestral_ext.bin</DataFile>
       <DebugCmdTime>True</DebugCmdTime>
       <DebugEnable>False</DebugEnable>
       <RunCount>100</RunCount>

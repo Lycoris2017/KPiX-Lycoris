@@ -11,3 +11,4 @@ cntrlGui/Makefile
 moc_*
 *.log
 *.tar
+analysis/
