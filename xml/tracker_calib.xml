@@ -26,7 +26,7 @@
          <KpixRxRaw>False</KpixRxRaw>
          <RunMode>Calibrate</RunMode>
          <KpixInputEdge>Falling Edge</KpixInputEdge>
-         <KpixOutputEdge>Falling Edge</KpixOutputEdge>
+         <KpixOutputEdge>Rising Edge</KpixOutputEdge>
          <TrigSource>None</TrigSource>
          <TimestampSource>None</TimestampSource>
          <kpixAsic>
@@ -42,7 +42,7 @@
             <CfgDisableTemp>False</CfgDisableTemp>
             <CntrlDisPerReset>True</CntrlDisPerReset>             <!-- 0-->
             <CntrlEnDcReset>True</CntrlEnDcReset>                 <!-- 1-->
-            <CntrlHighGain>False</CntrlHighGain>                  <!-- 2-->
+            <CntrlHighGain>True</CntrlHighGain>                  <!-- 2-->
             <CntrlNearNeighbor>False</CntrlNearNeighbor>          <!-- 3-->
             <CntrlForceTrigSource>Internal</CntrlForceTrigSource> <!-- 4-->
             <CntrlCalSource>Internal</CntrlCalSource>             <!-- 6-->
@@ -120,7 +120,7 @@
           <SerialNumber>1024</SerialNumber>
         </kpixAsic>
         <kpixAsic index="30">
-          <Enabled>True</Enabled>
+          <Enabled>False</Enabled>
           <SerialNumber>1030</SerialNumber>
         </kpixAsic>
         <kpixAsic index="28">

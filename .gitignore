@@ -12,3 +12,4 @@ moc_*
 *.log
 *.tar
 analysis/
+xml/*.xml
