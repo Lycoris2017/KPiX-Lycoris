@@ -155,11 +155,18 @@ void Device::verifyRegister ( Register *reg, bool warnOnly, uint32_t mask ) {
    }
    delete temp;
 
+   /* mengqing's dev for 1st sensor test*/
+   std::cout<<"\n ***** Device::verifyRegister, printout for debug ***** \n"<<std::endl;
+   std::cout<< msg.str();
+   std::cout<<"\n\n";
+   
    // throw message on error or verify failure
    if ( err || (!match) ) {
-      cout << msg.str() << endl;
-      if ( !warnOnly ) throw(msg.str());
+     std::cout<<"\n ***** Error or verify failure! ***** \n"<<std::endl; // mengqing
+     cout << msg.str() << endl;
+     if ( !warnOnly ) throw(msg.str());
    }
+   
 }
 
 // to set variable values from xml tree
