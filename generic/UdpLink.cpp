@@ -119,7 +119,15 @@ void UdpLink::rxHandler() {
             //udpcnt  = (qbuffer[0] << 8) & 0xF00;
             udpcnt  =  qbuffer[1] & 0xFF;
             udpcnt -= 1;
-
+	    
+	    //--> start: mengqing
+	    //cout<< "UdpLink::rxHandler => \n"
+	    //<< "qbuffer[0]" << dec << rSof << " " << rEof << " " << rVc <<endl;
+	    // 	<< " Sof=" << std::dec << rSof << " count=" << std::dec << rxSize[rxIdx] <<"\n"
+	    // 	<< " udpcnt="<< std::dec << udpcnt << ", ret=" << std::dec << ret 
+	    // 	<< ", iov_len=" << dec << vecHdr[1].iov_len << endl;
+	    //--> end: mengqing
+	     	    
             // Bad sof
             if (( rSof && rxSize[rxIdx] != 0 ) || ( !rSof && rxSize[rxIdx] == 0 )) {
                cout << "UdpLink::rxHandler -> Bad sof in header."
@@ -226,7 +234,7 @@ void UdpLink::ioHandler() {
    // While enabled
    while ( runEnable_ ) {
       udpSize = 0;
-
+      //cout<<"UdpLink::ioHandler I AM HERE!!!!!!!"<<endl;
       // Run Command TX is pending
       if ( lastRunCnt != runReqCnt_ ) {
 
