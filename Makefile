@@ -48,6 +48,7 @@ install:
 # Object directory
 dir:
 	test -d $(OBJ) || mkdir $(OBJ)
+	test -d $(BIN) || mkdir $(BIN)
 
 # Clean
 clean:
