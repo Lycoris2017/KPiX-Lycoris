@@ -237,22 +237,32 @@ bool DataRead::next (Data *data) {
 
       if ( size == 0 ) continue;
 
-      //cout << "Size field = 0x" << hex << size << endl; // wmq
-      //cout << "size >> 28 = " << (size >> 28) <<endl; // wmq
+      cout << "*Size field = 0x" << hex << size
+	   << ", Type 0x" << setw(8) << setfill('0') << ((size >> 28) & 0xF) << endl; // wmq
       // Frame type
+      
       switch ( (size >> 28) & 0xF ) {
          
          // Data
          case Data::RawData : found = true; break;
 
          // Configuration
-         case Data::XmlConfig : xmlParse(size,shBuff); break;
+      case Data::XmlConfig : 
+	cout << "DataRead::next -> XmlConfig type 0x" 
+	     << hex << setw(8) << setfill('0') << ((size >> 28) & 0xF) << endl;
+	xmlParse(size,shBuff); break;
+	
 
          // Status
-         case Data::XmlStatus : xmlParse(size,shBuff); break;
-
+      case Data::XmlStatus :
+	cout << "DataRead::next -> XmlStatus type 0x" 
+	     << hex << setw(8) << setfill('0') << ((size >> 28) & 0xF) << endl;
+	xmlParse(size,shBuff); break;
+	
          // Start
-         case Data::XmlRunStart : sawRunStart_ = true; xmlParse(size,shBuff); break;
+         case Data::XmlRunStart :
+	   
+	   sawRunStart_ = true; xmlParse(size,shBuff); break;
 
          // Stop
          case Data::XmlRunStop : sawRunStop_ = true; xmlParse(size,shBuff); break;
@@ -265,7 +275,10 @@ bool DataRead::next (Data *data) {
             cout << "DataRead::next -> Unknown data type 0x" 
                  << hex << setw(8) << setfill('0') << ((size >> 28) & 0xF) << " skipping." << endl;
             if ( smem_ != NULL ) return(false);   
-            else return(lseek(fd_, (size & 0x0FFFFFFF), SEEK_CUR));
+            else{
+	      cout << size << hex << endl;
+	      return(lseek(fd_, ((size) & 0x0FFFFFFF), SEEK_CUR));
+	    }
             break;
       }
    } while ( ! found );
