@@ -6,8 +6,8 @@ OBJ    := $(PWD)/.obj
 XMLC   := xml2-config
 CFLAGS := -Wall `$(XMLC) --cflags` -I$(PWD)/generic -I$(PWD)/kpix -I$(PWD)/offline -I$(PWD)/deviceLib -fPIC
 LFLAGS := `$(XMLC) --libs` -pthread -lrt -lbz2
-SYSLIB := /usr/local/lib/kpix
-SYSINC := /usr/local/include/kpix
+SYSLIB := /usr/local/lib/kpix1
+SYSINC := /usr/local/include/kpix1
 
 # Generic Sources
 GEN_DIR := $(PWD)/generic
@@ -33,7 +33,7 @@ UTL_SRC := $(wildcard $(UTL_DIR)/*.cpp)
 UTL_BIN := $(patsubst $(UTL_DIR)/%.cpp,$(BIN)/%,$(UTL_SRC))
 
 # Default
-min: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui libkpix.so.1
+min: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui libkpix.so
 # working point: kpix onlineGui can only work with old qwt libs which were already replaced by and updated in the current database.
 # can be fixed by mannually debugging everywhere... (todo: mengqing @Nov27)
 all: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs libkpix.so
@@ -41,7 +41,7 @@ norm: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) gui online pylibs
 share: dir $(GEN_OBJ) $(KPX_OBJ) $(UTL_BIN) libkpix.so
 install:
 	test -d $(SYSLIB) || mkdir $(SYSLIB)
-	cp libkpix.so.1 $(SYSLIB)
+	cp libkpix.so $(SYSLIB)
 	test -d $(SYSINC) || mkdir $(SYSINC) 
 	cp ./generic/*.h ./kpix/*.h $(SYSINC)
 
@@ -81,7 +81,7 @@ $(BIN)/%: $(UTL_DIR)/%.cpp $(GEN_OBJ) $(KPX_OBJ)
 	$(CC) $(CFLAGS) $(DEF) $(OBJ)/* -o $@ $< $(LFLAGS) 
 
 # Compile all c-level code to a shared lib for EUDAQ: wmq@15-Jun-2017
-libkpix.so.1: $(GEN_OBJ) $(KPX_OBJ)
+libkpix.so: $(GEN_OBJ) $(KPX_OBJ)
 	$(CC) -shared -fPIC $(CFLAGS) $(DEF) $(OBJ)/* -o $@  $(LFLAGS) 
 
 # root
