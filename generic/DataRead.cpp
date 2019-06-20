@@ -106,6 +106,7 @@ void DataRead::xmlParse ( uint32_t size, char *data ) {
       time_.parse("runTime",buff);
    }
 
+   //std::cout << buff << std::endl;
    free(buff);
 }
 
