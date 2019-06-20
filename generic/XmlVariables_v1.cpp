@@ -19,7 +19,7 @@
 // Modification history :
 // 04/12/2011: created
 //-----------------------------------------------------------------------------
-#include <XmlVariables.h>
+#include <XmlVariables_v1.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>

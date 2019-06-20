@@ -35,7 +35,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-#include "KpixEvent.h"
+#include "KpixEvent_v1.h"
 using namespace std;
 
 // Constructor

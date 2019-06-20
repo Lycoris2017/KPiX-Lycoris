@@ -35,8 +35,8 @@
 #include <string>
 #include <unistd.h>
 #include <sys/types.h>
-#include "KpixSample.h"
-#include <Data.h>
+#include "KpixSample_v1.h"
+#include <Data_v1.h>
 using namespace std;
 
 //! Tracker Event Container Class

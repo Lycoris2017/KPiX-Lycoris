@@ -21,7 +21,7 @@
 //-----------------------------------------------------------------------------
 #include <System.h>
 #include <ControlServer.h>
-#include <XmlVariables.h>
+#include <XmlVariables_v1.h>
 #include <sys/select.h>
 #include <stdint.h>
 #include <signal.h>

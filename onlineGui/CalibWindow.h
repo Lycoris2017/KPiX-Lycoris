@@ -24,7 +24,7 @@
 #include <QTimer>
 #include <qwt_plot.h>
 #include <qwt_plot_curve.h>
-#include <KpixEvent.h>
+#include <KpixEvent_v1.h>
 #include "KpixHistogram.h"
 using namespace std;
 

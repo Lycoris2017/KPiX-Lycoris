@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// File          : DataRead.h
+// File          : DataRead_v1.h
 // Author        : Ryan Herbst  <rherbst@slac.stanford.edu>
 // Created       : 04/12/2011
 // Project       : General Purpose
@@ -19,13 +19,13 @@
 // Modification history :
 // 04/12/2011: created
 //-----------------------------------------------------------------------------
-#ifndef __DATA_READ_H__
-#define __DATA_READ_H__
+#ifndef __DATA_READ_V1_H__
+#define __DATA_READ_V1_H__
 
 #include <string>
 #include <map>
-#include <Data.h>
-#include <XmlVariables.h>
+#include <Data_v1.h>
+#include <XmlVariables_v1.h>
 #include <DataSharedMem.h>
 #include <stdint.h>
 

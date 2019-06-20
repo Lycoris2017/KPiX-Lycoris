@@ -15,7 +15,7 @@
 //-----------------------------------------------------------------------------
 #include <string.h>
 #include <iostream>
-#include "KpixSample.h"
+#include "KpixSample_v1.h"
 using namespace std;
 
 // Constructor for static pointer

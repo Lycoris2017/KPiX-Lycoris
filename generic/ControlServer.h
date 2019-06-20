@@ -32,7 +32,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <ControlCmdMem.h>
-#include <XmlVariables.h>
+#include <XmlVariables_v1.h>
 #include <stdint.h>
 using namespace std;
 

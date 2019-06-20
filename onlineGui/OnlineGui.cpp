@@ -22,8 +22,8 @@
 #include <QApplication>
 #include <QErrorMessage>
 #include <QObject>
-#include "../generic/DataRead.h"
-#include "../kpix/KpixEvent.h"
+#include "../generic/DataRead_v1.h"
+#include "../kpix/KpixEvent_v1.h"
 #include "MainWindow.h"
 #include "SharedMem.h"
 using namespace std;

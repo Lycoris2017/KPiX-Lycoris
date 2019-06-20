@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// File          : XmlVariables.h
+// File          : XmlVariables_v1.h
 // Author        : Ryan Herbst  <rherbst@slac.stanford.edu>
 // Created       : 06/05/2012
 // Project       : General Purpose
@@ -24,8 +24,8 @@
 // Modification history :
 // 04/12/2011: created
 //-----------------------------------------------------------------------------
-#ifndef __XML_VARIABLES_H__
-#define __XML_VARIABLES_H__
+#ifndef __XML_VARIABLES_V1_H__
+#define __XML_VARIABLES_V1_H__
 
 #include <string>
 #include <map>

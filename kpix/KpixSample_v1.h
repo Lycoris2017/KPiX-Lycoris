@@ -19,6 +19,7 @@
 //-----------------------------------------------------------------------------
 // Modification history :
 // 05/29/2012: created
+// 20/06/2019: Mengqing - Change name for version control
 //-----------------------------------------------------------------------------
 #ifndef __KPIX_SAMPLE_H__
 #define __KPIX_SAMPLE_H__

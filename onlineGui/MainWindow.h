@@ -21,13 +21,13 @@
 #include <QDomDocument>
 #include <QHBoxLayout>
 #include <QCheckBox>
-#include <KpixEvent.h>
+#include <KpixEvent_v1.h>
 #include <HistWindow.h>
 #include <TimeWindow.h>
 #include <HitWindow.h>
 #include <CalibWindow.h>
-#include "../generic/DataRead.h"
-#include "../kpix/KpixEvent.h"
+#include "../generic/DataRead_v1.h"
+#include "../kpix/KpixEvent_v1.h"
 using namespace std;
 
 class MainWindow : public QWidget {

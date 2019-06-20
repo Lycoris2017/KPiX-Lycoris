@@ -1,5 +1,5 @@
 //-----------------------------------------------------------------------------
-// File          : Data.h
+// File          : Data_v1.h
 // Author        : Ryan Herbst  <rherbst@slac.stanford.edu>
 // Created       : 04/12/2011
 // Project       : General Purpose
@@ -19,8 +19,8 @@
 // Modification history :
 // 04/12/2011: created
 //-----------------------------------------------------------------------------
-#ifndef __DATA_H__
-#define __DATA_H__
+#ifndef __DATA_V1_H__
+#define __DATA_V1_H__
 
 #include <string>
 #include <stdint.h>

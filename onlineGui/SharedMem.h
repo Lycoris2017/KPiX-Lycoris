@@ -17,9 +17,9 @@
 #define __SHARED_MEM_H__
 
 #include <QThread>
-#include "../generic/DataSharedMem.h"
-#include "../generic/DataRead.h"
-#include "../kpix/KpixEvent.h"
+#include "../generic/Data_v1.haredMem.h"
+#include "../generic/DataRead_v1.h"
+#include "../kpix/KpixEvent_v1.h"
 using namespace std;
 
 class SharedMem : public QThread {
